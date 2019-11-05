@@ -5,17 +5,23 @@ $(document).ready(function() {
 
     var correct = 0;
     var incorrect = 0;
-    var unanswered = 8;
+    var unanswered = 0;
     var questionIndex = 0;
     var optionsIndex = 0;
 
     var questions = [
-        { q: "Is Franchesca always wrong?", options: ["Yes","Yes","Definitely","Totally","Completely"], correct: "2" },
-        { q: "Is Franchesca NAAAAAASTY?", options: ["Yes","The option before","Uh-huh","mmhmm","Of course"], correct: "1" },
-        // { q: "There are 42 ounces in a pound.", options: ["1","2","3","4","5"], correct: "4" },
-        // { q: "The Declaration of Independence was created in 1745.", options: ["1","2","3","4","5"], correct: "3" },
-        // { q: "Bananas are vegetables.", options: ["1","2","3","4","5"], correct: "5" }    
+        { q: "Is Cristiano better than Messi?", options: ["Yes","Yes","Definitely","Totally","Completely"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
+        { q: "Is Messi better than Cristiano?", options: ["Yes","The option before","Uh-huh","mmhmm","Of course"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
+        { q: "There are 42 ounces in a pound.", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
+        { q: "The Declaration of Independence was created in 1745.", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
+        { q: "Bananas are vegetables.", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] }    
       ];
+
+    unanswered = questions.length;
+
+    // function checkanswers() {
+
+    // }
 
     $("#start-button").on("click", function() {
         // Make button disappear after being clicked
@@ -29,10 +35,14 @@ $(document).ready(function() {
             textcenter.append("<div id='question" + questionIndex + "'><h2>" + questions[questionIndex].q + "</h2></div><br>")
             var currentQuestion = $("#question" + questionIndex)
             for (optionsIndex = 0; optionsIndex < (questions[questionIndex].options).length; optionsIndex++) {
-                currentQuestion.append('<input type="radio" name="radiobutton' + questionIndex + '" value="' + questions[questionIndex].options[optionsIndex] +'"><p>' + questions[questionIndex].options[optionsIndex] + '</p><br>')
+                currentQuestion.append('<input type="radio" name="radiobutton' + questionIndex + '" value="' + questions[questionIndex].correct[optionsIndex] +'">' + questions[questionIndex].options[optionsIndex] + '<br>')
+                // $(".radiobutton" + questionIndex).isSelected();
             }
         }
 
+        $('<button id="done-button"><h2>Done!</h2></button>').appendTo(textcenter);
+
+        
 // **********************************************
         // Create a for loop that will create divs for each one of the elements in the array.
         // $("<div></div>").appendTo(textcenter);
@@ -42,7 +52,7 @@ $(document).ready(function() {
 
         // ----------- Time Remaining ------------ \\
         //  Seconds to answer questions:
-        var timeremaining = 40;
+        var timeremaining = 45;
 
         //  Variable that will hold our interval ID when we execute
         //  the "run" function
@@ -56,6 +66,28 @@ $(document).ready(function() {
             intervalId = setInterval(decrement, 1000);
         }
 
+        Array.from(document.querySelectorAll('input[type=radio]')).forEach(item => {
+            item.addEventListener('click', e => {
+            correct = document.querySelectorAll('input[type=radio][value=correct]:checked').length;
+            console.log("correct:" + correct);
+            incorrect = document.querySelectorAll('input[type=radio][value=incorrect]:checked').length;
+            console.log("incorrect:" + incorrect);
+            unanswered = questions.length - correct - incorrect;
+            })
+        })
+
+        function endgame() {
+
+                $(textcenter).html("<h3>All Done!</h3><br>");
+
+                $(textcenter).append("<div id='correct'><h5>Correct Answers: " + correct + "</h5></div>");
+                
+                $(textcenter).append("<div id='incorrect'><h5>Incorrect Answers: " + incorrect + "</h5></div>");
+                
+                $(textcenter).append("<div id='unanswered'><h5>Unanswered: " + unanswered + "</h5></div>");
+
+                stop();
+        }
         //  The decrement function.
         function decrement() {
 
@@ -69,19 +101,19 @@ $(document).ready(function() {
         //  Once number hits zero...
             if (timeremaining === 0) {
 
-                $(textcenter).html("<h3>All Done!</h3><br>");
-
-                $(textcenter).append("<div id='correct'><h5>Correct Answers: " + correct + "</h5></div>");
-                
-                $(textcenter).append("<div id='incorrect'><h5>Incorrect Answers: " + incorrect + "</h5></div>");
-                
-                $(textcenter).append("<div id='unanswered'><h5>Unanswered: " + unanswered + "</h5></div>");
+                endgame(); 
                 //  ...run the stop function.
-                stop();
                 // 
                 // ADD HERE WHAT HAPPENS WHEN TIME IS UP OR WHEN THE USER 
             }
         }
+
+        $("#done-button").on("click", function() {
+
+                endgame(); 
+                //  ...run the stop function.
+
+        });
 
         //  The stop function
         function stop() {
