@@ -10,8 +10,8 @@ $(document).ready(function() {
     var optionsIndex = 0;
 
     var questions = [
-        { q: "Is Emily silly?", options: ["Yes","Yes","Definitely","Totally","Completely"], correct: "2" },
-        { q: "Can Emily pull off space buns?", options: ["Yes","The option before","Uh-huh","mmhmm","Of course"], correct: "1" },
+        { q: "Is Franchesca always wrong?", options: ["Yes","Yes","Definitely","Totally","Completely"], correct: "2" },
+        { q: "Is Franchesca NAAAAAASTY?", options: ["Yes","The option before","Uh-huh","mmhmm","Of course"], correct: "1" },
         // { q: "There are 42 ounces in a pound.", options: ["1","2","3","4","5"], correct: "4" },
         // { q: "The Declaration of Independence was created in 1745.", options: ["1","2","3","4","5"], correct: "3" },
         // { q: "Bananas are vegetables.", options: ["1","2","3","4","5"], correct: "5" }    
