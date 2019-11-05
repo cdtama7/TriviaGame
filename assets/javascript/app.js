@@ -10,12 +10,15 @@ $(document).ready(function() {
     var optionsIndex = 0;
 
     var questions = [
-        { q: "Is Cristiano better than Messi?", options: ["Yes","Yes","Definitely","Totally","Completely"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
-        { q: "Is Messi better than Cristiano?", options: ["Yes","The option before","Uh-huh","mmhmm","Of course"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
-        { q: "There are 42 ounces in a pound.", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
-        { q: "The Declaration of Independence was created in 1745.", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
-        { q: "Bananas are vegetables.", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] }    
-      ];
+        { q: "1. Who proposed the four stages of cognitive development?", options: ["a. Skinner","b. Freud","c. Piaget","d. Watson"], correct: ["incorrect","incorrect","correct","incorrect"] },
+        { q: "2. If the child clings to its mother and is distressed by separation, the observed type of attachment is:", options: ["a. Secure", "b. Anxious-resistant", "c. Anxious-avoidant", "d. Disorganized"] , correct: ["incorrect","correct","incorrect","incorrect"] },
+        { q: "3. During the Milgram experiment, participants:", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
+        { q: "4. Schizophrenia was previously called:", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
+        { q: "5. The psychosexual stages proposed by Freud are (in order) :", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
+        { q: "6. One of the essential criteria used to diagnose Antisocial Personality Disorder is:", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
+        { q: "7. The syndrome in which the person believes he/she is already dead, is known as:", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
+        { q: "8. Research has shown that it is harder for psychopaths to:", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] }
+ ];
 
     unanswered = questions.length;
 
