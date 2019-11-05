@@ -12,12 +12,12 @@ $(document).ready(function() {
     var questions = [
         { q: "1. Who proposed the four stages of cognitive development?", options: ["a. Skinner","b. Freud","c. Piaget","d. Watson"], correct: ["incorrect","incorrect","correct","incorrect"] },
         { q: "2. If the child clings to its mother and is distressed by separation, the observed type of attachment is:", options: ["a. Secure", "b. Anxious-resistant", "c. Anxious-avoidant", "d. Disorganized"] , correct: ["incorrect","correct","incorrect","incorrect"] },
-        { q: "3. During the Milgram experiment, participants:", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
-        { q: "4. Schizophrenia was previously called:", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
-        { q: "5. The psychosexual stages proposed by Freud are (in order) :", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
-        { q: "6. One of the essential criteria used to diagnose Antisocial Personality Disorder is:", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
-        { q: "7. The syndrome in which the person believes he/she is already dead, is known as:", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] },
-        { q: "8. Research has shown that it is harder for psychopaths to:", options: ["1","2","3","4","5"], correct: ["incorrect","correct","incorrect","incorrect","incorrect"] }
+        { q: "3. During the Milgram experiment, participants:", options: ["a. Were divided into two groups, prisoners and guards, and lived in a fake prison for two weeks.", "b. Had to choose between eating a marshmallow immediately or waiting for an hour and having two marshmallows in return.", "c. Were instructed to administer electric shocks to innocent people.", "d. Had to look at several pictures of strangers and identify their emotions."] , correct: ["incorrect","incorrect","correct","incorrect"] },
+        { q: "4. Schizophrenia was previously called:", options: ["a. Manic disorder", "b. Split-personality disorder", "c. Delusional disorder", "d. Dementia praecox"], correct: ["incorrect","incorrect","incorrect","correct"] },
+        { q: "5. The psychosexual stages proposed by Freud are (in order) :", options: ["a. oral, anal, phallic, latency.","b. anal, oral, latency, phallic.","c. latency, oral, phallic, anal.","d. phallic, latency, anal, oral. "], correct: ["correct","incorrect","incorrect","incorrect"] },
+        { q: "6. One of the essential criteria used to diagnose Antisocial Personality Disorder is:", options: ["a. Lack of concern for feelings, needs, or suffering of others","b. Presence of hallucinations","c. Tendency towards a solitary lifestyle","d. Unrelenting mistrust and suspicion of others"], correct: ["correct","incorrect","incorrect","incorrect"] },
+        { q: "7. The syndrome in which the person believes he/she is already dead, is known as:", options: ["a. Munchausen syndrome","b. Stockholm syndrome ","c. Cotard's syndrome ","d. Barakat syndrome"], correct: ["incorrect","incorrect","correct","incorrect"] },
+        { q: "8. Research has shown that it is harder for psychopaths to:", options: ["a. Feel affective empathy","b. Forsee consequences of immediate actions","c. Delay gratifications","d. All of the above"], correct: ["incorrect","incorrect","incorrect","correct"] }
  ];
 
     unanswered = questions.length;
