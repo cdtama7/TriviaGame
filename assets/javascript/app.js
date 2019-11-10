@@ -55,7 +55,7 @@ $(document).ready(function() {
 
         // ----------- Time Remaining ------------ \\
         //  Seconds to answer questions:
-        var timeremaining = 120;
+        var timeremaining = 30;
 
         //  Variable that will hold our interval ID when we execute
         //  the "run" function
