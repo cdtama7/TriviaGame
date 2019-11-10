@@ -32,7 +32,7 @@ $(document).ready(function() {
 
         var textcenter = $(".text-center")
 
-        $("<div id='time'></div><br>").appendTo(textcenter);
+        $("<br><div id='time'></div><br>").appendTo(textcenter);
 
         for (questionIndex = 0; questionIndex < questions.length; questionIndex++ ) {
             textcenter.append("<div id='question" + questionIndex + "'><h2>" + questions[questionIndex].q + "</h2></div><br>")
@@ -55,7 +55,7 @@ $(document).ready(function() {
 
         // ----------- Time Remaining ------------ \\
         //  Seconds to answer questions:
-        var timeremaining = 45;
+        var timeremaining = 120;
 
         //  Variable that will hold our interval ID when we execute
         //  the "run" function
@@ -81,7 +81,7 @@ $(document).ready(function() {
 
         function endgame() {
 
-                $(textcenter).html("<h3>All Done!</h3><br>");
+                $(textcenter).html("<br><h3>All Done!</h3><br>");
 
                 $(textcenter).append("<div id='correct'><h5>Correct Answers: " + correct + "</h5></div>");
                 

@@ -1,0 +1,20 @@
+* {
+    max-width:960px;
+    margin: auto;
+}
+
+body {
+    background-image : url('backgroundimage.jpg');
+    /*background-image : url('background.png');*/
+    font-size: 18px;
+    color:#0f0d0d;
+    
+}
+
+#wrapper {
+    text-align: center;
+}
+
+h1 {
+    display: inline-block;
+}
